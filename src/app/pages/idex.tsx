@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { FC } from "react";
 
-export default function Home() {
+const Home: FC = () => {
   return (
     <div className="font-sans min-h-screen p-8 sm:p-20 bg-gray-50">
       {/* Header */}
@@ -82,4 +83,7 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
+
