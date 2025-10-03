@@ -1,17 +1,17 @@
 import Image from "next/image";
-import { FC } from "react";
+import Link from "next/link";
 
-const Home: FC = () => {
+export default function Home() {
   return (
     <div className="font-sans min-h-screen p-8 sm:p-20 bg-gray-50">
       {/* Header */}
       <header className="flex justify-between items-center mb-12">
         <h1 className="text-3xl font-bold">Interior Bliss</h1>
         <nav className="flex gap-6 text-gray-700 font-medium">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Designs</a>
-          <a href="#">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/designs">Designs</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
       </header>
 
@@ -21,9 +21,12 @@ const Home: FC = () => {
         <p className="text-lg text-gray-600 mb-6">
           Explore our exclusive home interior designs
         </p>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+        <Link
+          href="/designs"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+        >
           View Designs
-        </button>
+        </Link>
       </section>
 
       {/* Designs Grid */}
@@ -83,7 +86,4 @@ const Home: FC = () => {
       </footer>
     </div>
   );
-};
-
-export default Home;
-
+}
